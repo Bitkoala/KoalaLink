@@ -1,117 +1,104 @@
-<p align="center">
+﻿<p align="center">
   <img src="https://pickoala.com/img/images/2026/01/01/S9FVrAhU.webp" alt="KoalaLink Logo" width="200">
 </p>
 
-# <p align="center">🐨 KoalaLink</p>
+# <p align="center">🐨 KoalaLink Series</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-7.4+-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP">
   <img src="https://img.shields.io/badge/SQLite-3-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite">
   <img src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap">
-  <img src="https://img.shields.io/badge/Chart.js-3.9-FF6384?style=flat-square&logo=chartdotjs&logoColor=white" alt="Chart.js">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
 </p>
 
-**KoalaLink** 是一款专业级、轻量化的短链接中转与流量统计系统。基于原生 PHP 和 SQLite 架构，旨在为中小型项目提供私密、安全且易于管理的跳转解决方案。
+**KoalaLink** 系列是为您量身打造的专业级短链接管理解决方案。从极致便携到企业级运营，我们提供三个版本以满足不同阶段的需求。
 
-[English](#english) | [中文](#chinese)
+[English](#english) | [中文说明](#chinese)
 
 ---
 
 <a name="chinese"></a>
 ## 🇨🇳 中文说明
 
-### ✨ 核心特性
-- **多模式跳转**：支持别名 (Slug)、Base64 加密以及直接 URL 跳转。
-- **品牌中转页**：内置倒计时、安全分级检测及品牌化 UI。
-- **数据仪表盘**：全自动化流量统计，支持 24 小时趋势、来源 (Referer) 分析及热门动态跳转记录。
-- **管理后台**：一键 CRUD、实时配置 Referer 白名单及信任域名。
-- **全系统 i18n**：自动识别浏览器语言，支持中英双语切换。
-- **极致轻量**：仅需 PHP 环境，无需传统 MySQL 数据库，秒级部署。
+### 💎 版本概览
 
-### 🚀 快速开始
-1. **环境要求**：PHP 7.4+ (需开启 `pdo_sqlite` 扩展)。
-2. **部署**：将所有文件上传至 Web 服务器目录。
-3. **权限**：确保程序目录具有写权限（用于自动创建 `redirect.db`）。
-4. **登录**：访问 `admin.php`，默认密码为 `admin`。
-5. **修改密码**：登录后进入“全局设置”页面即可在线修改管理员密码，无需修改代码。
+| 版本 | 定位 | 核心架构 | 适用场景 | 快速前往 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Pro (SaaS)** | 企业级多租户平台 | PHP + MySQL/SQLite | 商业运营、多用户管理 | [查看详情](#saas-pro) |
+| **Lite (自托管)** | 个人/团队专业版 | PHP + SQLite | 稳定易用的自用中转站 | [查看详情](#lite-self-hosted) |
+| **Nano (单页)** | 极致轻量工具 | 单 PHP 文件 | 临时分享、无需后台的跳转 | [查看详情](#nano-standalone) |
 
-### 📂 文件结构
-- `go.php`: 核心路由与中转引擎。
-- `admin.php`: 管理后台与配置中心。
-- `analytics.php`: 数据可视化分析。
-- `404.php`: 品牌化错误提示页。
-- `logo.png` / `Favicon.png`: 品牌资产文件。
+---
 
-### 📦 单页版 (Standalone)
-在 `单页go/` 目录下提供了一个**简化版**的独立脚本：
-- **极简体验**：专为不需要复杂管理功能的用户设计，轻量且高效。
-- **零依赖**：无需数据库，所有配置均在 `go.php` 文件头部代码中修改。
-- **功能集成**：单文件内同时包含 Base64 解密跳转与链接生成工具。
-- **快速部署**：适用于临时项目或无需后台管理的纯静态跳转需求。
+<a name="saas-pro"></a>
+### 👥 1. KoalaLink Pro (SaaS/专业版)
+位于 `saas/` 目录，是功能最强大的多租户短链接平台。
 
-### 👥 SaaS 多租户版 (Multi-tenant)
-在 `saas/` 目录下提供了一个完整的 **SaaS 平台级** 版本。除基础功能外，包含以下**企业级增强特性**：
+- **核心特性**：
+  - **多用户体系**：完整的注册、登录及权限管理，支持 VIP 等级与配额限制。
+  - **智能分流**：支持按设备 (iOS/Android) 及地理位置 (GeoIP) 精准路由。
+  - **品牌定制**：白标模式 (White-label) 允许去除官方品牌，绑定无限量自定义域名。
+  - **深度分析**：交互式全球热力图、设备看板及详细的访问轨迹追踪。
+  - **开发者 API**：全功能 RESTful API，方便集成到生产环境。
+- **快速开始**：直接将 `saas/` 内容部署至子域名，配置 `config.php` 即可。
 
-- **用户体系**：支持用户自主注册、登录及会话管理。
-- **数据隔离**：每个用户拥有独立的后台，仅能管理和统计自己的链接。
-- **智能分流**：针对设备(iOS/Android)与地理位置(GeoIP)的自动路由，支持 A/B 测试。
-- **安全中心**：集成 Google Safe Browsing 实时拦截恶意链接，支持防盗链 Referer 白名单。
-- **品牌私有化**：支持去除 "KoalaLink" 品牌后缀 (White-label)，绑定自定义域名 HTTPS。
-- **深度分析**：包含国家/地区分布地图、设备/浏览器占比及访问时段趋势图。
-- **链接控制**：支持过期时间、最大点击限制及过期后的 Fallback 跳转地址。
-- **运营模型**：内置等级限制（普通用户限 5 条链接，VIP 用户无限制），仪表盘实时显示配额进度条。
-- **数据库升级**：原生支持 SQLite 与 **MySQL/MariaDB**，通过 `saas/config.php` 一键切换。
-- **开发者 API**：支持通过 `X-API-KEY` 进行 RESTful 调用，实现链接自动化创建与数据查询。
-- **默认超管账号**：用户名 `admin`，密码 `admin` (请登录后立即在个人面板修改)。
+---
+
+<a name="lite-self-hosted"></a>
+### 🐨 2. KoalaLink Lite (自托管版/推荐)
+位于 **根目录**，专为追求性能与简易性的个人用户打造。
+
+- **核心特性**：
+  - **轻量架构**：基于 SQLite 数据库，无需安装 MySQL，零配置秒级启动。
+  - **管理面板**：直观的 CRUD 界面，实时配置 Referer 白名单与安全跳转。
+  - **数据看板**：可视化 24 小时流量统计，清晰掌握分流动态。
+  - **全系统 i18n**：自动识别浏览器语言，支持中英双语切换。
+- **快速开始**：
+  1. 上传根目录所有文件至服务器。
+  2. 访问 `admin.php` (默认密码 `admin`) 进行管理。
+  3. **进阶配置**：如需启用美化链接 (`domain.com/slug`)，请查阅 [伪静态配置指南](LITE_REWRITE_GUIDE.md)。
+
+---
+
+<a name="nano-standalone"></a>
+### 📦 3. KoalaLink Nano (单页版)
+位于 `单页go/` 目录，是将所有逻辑压缩至 10KB 左右的极致工具。
+
+- **核心特性**：
+  - **单文件逻辑**：无需数据库，配置、加密、跳转全部集成在一个 PHP 文件内。
+  - **零依赖**：甚至不需要后台，全静态配置，安全性极高。
+  - **内置工具**：自带 Base64 链接生成器。
+- **快速开始**：将 `go.php` 丢入任何 PHP 环境即可直接运行。
 
 ---
 
 <a name="english"></a>
 ## 🇺🇸 English Description
 
-### ✨ Key Features
-- **Multi-mode Redirection**: Supports Custom Slugs, Base64 Encoding, and Direct URL parameters.
-- **Branded Bridge**: Professional intermediate page with security assessment and countdown.
-- **Analytics Dashboard**: Automatic traffic tracking with 24h trends, Referer insights, and dynamic link logs.
-- **Control Panel**: User-friendly CRUD interface and real-time security configuration.
-- **Full i18n Support**: Auto-detects browser language (English & Chinese).
-- **Ultra Lightweight**: Pure PHP + SQLite architecture. No heavy database required.
+### 💎 Versions Overview
 
-### 🚀 Quick Start
-1. **Requirements**: PHP 7.4+ with `pdo_sqlite` extension enabled.
-2. **Deployment**: Upload all files to your web server.
-3. **Permissions**: Ensure the directory has write access for the SQLite database (`redirect.db`).
-4. **Login**: Access `admin.php`. Default password is `admin`.
-5. **Change Password**: You can change the admin password directly on the "Settings" page after logging in. No code modification required.
+| Version | Positioning | Architecture | Use Case | Link |
+| :--- | :--- | :--- | :--- | :--- |
+| **Pro (SaaS)** | Multi-tenant Platform | PHP + MySQL/SQLite | Commercial, Multi-user | [Details](#en-pro) |
+| **Lite (Normal)** | Professional Self-hosted | PHP + SQLite | Personal/Team Use | [Details](#en-lite) |
+| **Nano (Single)** | Ultra Lightweight Tool | Single PHP File | Temporary, Static | [Details](#en-nano) |
 
-### 🛠️ Technology Stack
-- **Backend**: Native PHP & SQLite PDO.
-- **Frontend**: Bootstrap 5, Chart.js, Bootstrap Icons.
-- **Design**: Modern UI with Glassmorphism and Harmony color palette.
+---
 
-### 📦 Simplified Standalone Version
-A **simplified version** of the redirect script is available in the `单页go/` directory:
-- **Lightweight**: Designed for users who don't need the database, dashboard, or analytics.
-- **Zero Dependencies**: No database required; all settings are manually configured in the file header.
-- **All-in-One**: Integrated Base64 decoder and link generator in a single file.
-- **Easy Setup**: Best for temporary projects or simple static site redirects.
+<a name="en-pro"></a>
+### 👥 1. KoalaLink Pro (SaaS)
+Located in `saas/`, full-featured enterprise-grade redirection platform.
+- **Features**: User registration, Smart Routing (Geo/Device), White-labeling, RESTful API, Deep Analytics.
 
-### 👥 SaaS Multi-tenant Version
-A complete **Platform-level** version is available in the `saas/` directory. Features include:
+<a name="en-lite"></a>
+### 🐨 2. KoalaLink Lite (Self-hosted)
+The **default files** in the root directory. Balanced performance and usability.
+- **Features**: SQLite-based, Management Panel, 24h Traffic Trends, i18n support.
 
-- **User System**: Supports independent user registration, login, and session management.
-- **Data Isolation**: Each user has a private dashboard to manage and track their own links.
-- **Smart Routing**: Auto-route by Device (iOS/Android) & Geo-location, with A/B Testing support.
-- **Security Suite**: Real-time malware scanning via Google Safe Browsing & Anti-hotlink Referer whitelists.
-- **White-labeling**: Option to remove "KoalaLink" branding suffixes and bind Custom Domains (HTTPS).
-- **Deep Analytics**: Interactive Heatmaps, Device/Browser breakdown, and 7-day traffic trends.
-- **Link Control**: Set Expiry dates, Max clicks, and Fallback URLs for expired links.
-- **Admin Panel**: Dedicated `admin.php` for platform oversight, user authorization, and **VIP tier management**.
-- **Monetization Ready**: Built-in quotas (Free: 5 links, VIP: Unlimited) with real-time usage progress bars.
-- **Enterprise DB**: Supports both SQLite and **MySQL/MariaDB** via `saas/config.php`.
-- **Developer API**: RESTful endpoints with `X-API-KEY` auth for automated link management.
-- **Default Credentials**: Username `admin`, password `admin` (Please update via dashboard after login).
+<a name="en-nano"></a>
+### 📦 3. KoalaLink Nano (Standalone)
+Located in `单页go/`, the minimalist single-file script (~10KB).
+- **Features**: Single-file Logic, No database, Integrated Encoder/Decoder.
 
 ---
 
