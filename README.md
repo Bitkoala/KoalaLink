@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <img src="https://pickoala.com/img/images/2026/01/01/S9FVrAhU.webp" alt="KoalaLink Logo" width="200">
+  <img src="https://ssl.shanku.lol/pickoala/KoalaLinPro2.png" alt="KoalaLink Logo" width="200">
 </p>
 
 # <p align="center">🐨 KoalaLink Series</p>
@@ -13,6 +13,12 @@
 
 **KoalaLink** 系列是为您量身打造的专业级短链接管理解决方案。从极致便携到企业级运营，我们提供三个版本以满足不同阶段的需求。
 
+### 🚀 演示站点 (Live Demos)
+- **KoalaLink 专业版**: [https://go.bitekaola.com](https://go.bitekaola.com)
+- **KoalaLink 轻量版**: [https://go.dsi.mom](https://go.dsi.mom)
+- **KoalaLink 单页版**: [https://go.shanku.lol](https://go.shanku.lol)
+
+
 [English](#english) | [中文说明](#chinese)
 
 ---
@@ -24,14 +30,14 @@
 
 | 版本 | 定位 | 核心架构 | 适用场景 | 快速前往 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Pro (SaaS)** | 企业级多租户平台 | PHP + MySQL/SQLite | 商业运营、多用户管理 | [查看详情](#saas-pro) |
-| **Lite (自托管)** | 个人/团队专业版 | PHP + SQLite | 稳定易用的自用中转站 | [查看详情](#lite-self-hosted) |
-| **Nano (单页)** | 极致轻量工具 | 单 PHP 文件 | 临时分享、无需后台的跳转 | [查看详情](#nano-standalone) |
+| **专业版 (Pro)** | 企业级多租户平台 | PHP + MySQL/SQLite | 商业运营、多用户管理 | [查看详情](#saas-pro) |
+| **轻量版 (Lite)** | 个人/团队版 | PHP + SQLite | 稳定易用的自用中转站 | [查看详情](#lite-self-hosted) |
+| **单页版 (Nano)** | 极致轻量工具 | 单 PHP 文件 | 临时分享、无需后台的跳转 | [查看详情](#nano-standalone) |
 
 ---
 
 <a name="saas-pro"></a>
-### 👥 1. KoalaLink Pro (SaaS/专业版)
+### � 1. KoalaLink 专业版 (Pro)
 位于 `saas/` 目录，是功能最强大的多租户短链接平台。
 
 - **核心特性**：
@@ -45,7 +51,7 @@
 ---
 
 <a name="lite-self-hosted"></a>
-### 🐨 2. KoalaLink Lite (自托管版/推荐)
+### 🐨 2. KoalaLink 轻量版 (Lite)
 位于 **根目录**，专为追求性能与简易性的个人用户打造。
 
 - **核心特性**：
@@ -61,7 +67,7 @@
 ---
 
 <a name="nano-standalone"></a>
-### 📦 3. KoalaLink Nano (单页版)
+### 📦 3. KoalaLink 单页版 (Nano)
 位于 `单页go/` 目录，是将所有逻辑压缩至 10KB 左右的极致工具。
 
 - **核心特性**：
@@ -89,16 +95,19 @@
 ### 👥 1. KoalaLink Pro (SaaS)
 Located in `saas/`, full-featured enterprise-grade redirection platform.
 - **Features**: User registration, Smart Routing (Geo/Device), White-labeling, RESTful API, Deep Analytics.
+- **Demo**: [https://go.bitekaola.com](https://go.bitekaola.com)
 
 <a name="en-lite"></a>
 ### 🐨 2. KoalaLink Lite (Self-hosted)
 The **default files** in the root directory. Balanced performance and usability.
 - **Features**: SQLite-based, Management Panel, 24h Traffic Trends, i18n support.
+- **Demo**: [https://go.dsi.mom](https://go.dsi.mom)
 
 <a name="en-nano"></a>
 ### 📦 3. KoalaLink Nano (Standalone)
 Located in `单页go/`, the minimalist single-file script (~10KB).
 - **Features**: Single-file Logic, No database, Integrated Encoder/Decoder.
+- **Demo**: [https://go.shanku.lol](https://go.shanku.lol)
 
 ---
 
