@@ -95,7 +95,7 @@
 ### 👥 1. KoalaLink Pro (SaaS)
 Located in `saas/`, full-featured enterprise-grade redirection platform.
 - **Features**: User registration, Smart Routing (Geo/Device), White-labeling, RESTful API, Deep Analytics.
-- **Demo**: [https://go.bitekaola.com](https://go.bitekaola.com)
+- **Demo**: [https://gokaola.top](https://gokaola.top)
 
 <a name="en-lite"></a>
 ### 🐨 2. KoalaLink Lite (Self-hosted)
