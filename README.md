@@ -14,7 +14,7 @@
 **KoalaLink** 系列是为您量身打造的专业级短链接管理解决方案。从极致便携到企业级运营，我们提供三个版本以满足不同阶段的需求。
 
 ### 🚀 演示站点 (Live Demos)
-- **KoalaLink 专业版**: [https://go.bitekaola.com](https://go.bitekaola.com)
+- **KoalaLink 专业版**: [https://gokaola.top](https://gokaola.top)
 - **KoalaLink 轻量版**: [https://go.dsi.mom](https://go.dsi.mom)
 - **KoalaLink 单页版**: [https://go.shanku.lol](https://go.shanku.lol)
 
